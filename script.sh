@@ -63,7 +63,8 @@ need git
 need npm
 need gh
 need vercel
-ok "git/npm/gh/vercel found"
+need code
+ok "git/npm/gh/vercel/code found"
 
 # Auth sanity checks (very common failure)
 gh auth status >/dev/null 2>&1 || die "gh not logged in. Run: gh auth login"
@@ -166,8 +167,8 @@ git push -q
 ok "README updated + pushed"
 
 step "Opening VSCode"
-open -a "Visual Studio Code" "$PROJECT_DIR" >/dev/null 2>&1 &
-ok "VSCode opened via macOS open"
+code "$PROJECT_DIR" "$PROJECT_DIR/README.md" >/dev/null 2>&1 &
+ok "VSCode opened"
 
 echo
 info "RESULT"
